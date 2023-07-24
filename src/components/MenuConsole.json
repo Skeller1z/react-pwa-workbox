@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "label": "Home",
+      "icon": "home",
+      "path": "/dashboard",
+      "submenus": []
+    },
+    {
+        "id": 2,
+        "label": "Profile",
+        "icon": "beaker",
+        "path": "/dashboard",
+        "submenus": []
+      },
+    {
+      "id": 3,
+      "label": "Report",
+      "icon": "collection",
+      "path": "/products",
+      "submenus": [
+        {
+          "id": 31,
+          "label": "PDF",
+          "path": "/products/all"
+        },
+        {
+          "id": 32,
+          "label": "Excel",
+          "path": "/products/add"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Settings",
+      "icon": "cog",
+      "path": "/settings",
+      "submenus": [
+        {
+          "id": 41,
+          "label": "General",
+          "path": "/settings/general"
+        },
+        {
+          "id": 42,
+          "label": "Security",
+          "path": "/settings/security"
+        }
+      ]
+    }
+  ]
+  
