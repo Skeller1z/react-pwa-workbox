@@ -4,6 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const {InjectManifest} = require('workbox-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
+    devtool: "source-map",
     context: __dirname,
     entry: './src/index.tsx',
     output: {
@@ -40,16 +41,15 @@ module.exports = {
     }),
     new CopyPlugin({
         patterns: [
-            { from: "./src/favicon.ico", to: ""},
-            { from: "./src/manifest.json", to: ""},
-            { from: "./src/logo192.png", to: ""},
-            { from: "./src/logo512.png", to: ""},
+            { from: "./public/favicon.ico", to: ""},
+            { from: "./public/manifest.json", to: ""},
+            { from: "./public/logo192.png", to: ""},
+            { from: "./public/logo512.png", to: ""},
         ],
     }),
     new InjectManifest({
         swSrc:'./src/src-sw.js',
         swDest:'sw.js',
-        
     })
 ],
 };

@@ -2,7 +2,7 @@
 import { Workbox } from "workbox-window";
 
 export default function registerServiceWorker() {
-    if ( 'production' === process.env.NODE_ENV) {
+    if ( 'production' !== process.env.NODE_ENV) {
         return;
     }
 
