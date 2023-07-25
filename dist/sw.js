@@ -7533,14 +7533,14 @@ self.skipWaiting();
 (0,workbox_precaching__WEBPACK_IMPORTED_MODULE_1__.precacheAndRoute)([{'revision':'2431f669e4f4e3e52a048fcda1cdd163','url':'/favicon.ico'},{'revision':'7447fa2d30ba88d28afbb914780e7271','url':'/images/8104960.jpg'},{'revision':'c21ab7faaf53fee4279f6d7e273aeba9','url':'/images/THPost.png'},{'revision':'863aa6698e947c1a3134b6f59b39536b','url':'/images/bg.jpg'},{'revision':'bb97a14ff83c6a0365a9677148cc0d44','url':'/images/business-concept-with-team-close-up.jpg'},{'revision':'e77baf1383ab9deb15d2197c1aa37dcb','url':'/images/flash.png'},{'revision':'d3834ff05f3213b2cce69760ae3709c0','url':'/images/kerry.png'},{'revision':'11ca337ee1f7c61919a7640764b1d38e','url':'/images/ninjavan.png'},{'revision':'ec208fb660e31f037088887031d0e4cd','url':'/images/pile-coins-forming-graph.jpg'},{'revision':'65bfd7e5fccc3eb72733cfaab4c28c1d','url':'/images/whyus1.png'},{'revision':'ad3cfa81dccb7ccb473d064bb465624e','url':'/index.html'},{'revision':'78d276f81fb10d1a84d348f21bb9f613','url':'/logo192.png'},{'revision':'2431f669e4f4e3e52a048fcda1cdd163','url':'/logo512.png'},{'revision':'9d59fc52021af93c9612187ecf78a393','url':'/manifest.json'},{'revision':'32b864a9af2d9da5bf02d8a74598c21d','url':'/node_modules_web-vitals_dist_web-vitals_js.main.js'}]);
 
 (0,workbox_routing__WEBPACK_IMPORTED_MODULE_2__.registerRoute)(
-    ({url}) => url.origin === 'https://fonts.googleapis.com',
+    ({ url }) => url.origin === 'https://fonts.googleapis.com',
     new workbox_strategies__WEBPACK_IMPORTED_MODULE_3__.StaleWhileRevalidate({
         cacheName: 'google-fonts-stylesheets',
     })
 );
 
 (0,workbox_routing__WEBPACK_IMPORTED_MODULE_2__.registerRoute)(
-    ({url}) => url.origin === 'https://fonts.gstatic.com',
+    ({ url }) => url.origin === 'https://fonts.gstatic.com',
     new workbox_strategies__WEBPACK_IMPORTED_MODULE_3__.StaleWhileRevalidate({
         cacheName: 'google-fonts-webfonts',
         plugins: [
@@ -7548,7 +7548,7 @@ self.skipWaiting();
                 statuses: [0, 200],
             }),
             new workbox_expiration__WEBPACK_IMPORTED_MODULE_5__.ExpirationPlugin({
-                maxAgeSeconds: 60 * 60 * 24 *365,
+                maxAgeSeconds: 60 * 60 * 24 * 365,
                 maxEntries: 30,
             }),
         ],
@@ -7556,24 +7556,24 @@ self.skipWaiting();
 );
 
 (0,workbox_routing__WEBPACK_IMPORTED_MODULE_2__.registerRoute)(
-    ({request}) => request.destination === 'image',
+    ({ request }) => request.destination === 'image',
     new workbox_strategies__WEBPACK_IMPORTED_MODULE_3__.CacheFirst({
-        cacheName: 'images',
+        cacheName: 'images_cache',
         plugins: [
             new workbox_cacheable_response__WEBPACK_IMPORTED_MODULE_4__.CacheableResponsePlugin({
                 statuses: [0, 200],
             }),
             new workbox_expiration__WEBPACK_IMPORTED_MODULE_5__.ExpirationPlugin({
                 maxEntries: 60,
-                maxAgeSeconds: 30 * 24 * 60 *60,
+                maxAgeSeconds: 30 * 24 * 60 * 60,
             }),
         ],
     })
 );
 
 (0,workbox_routing__WEBPACK_IMPORTED_MODULE_2__.registerRoute)(
-    ({request}) => request.destination === 'script' ||
-    request.destination === 'style',
+    ({ request }) => request.destination === 'script' ||
+        request.destination === 'style',
     new workbox_strategies__WEBPACK_IMPORTED_MODULE_3__.StaleWhileRevalidate({
         cacheName: 'static-resource',
     })
